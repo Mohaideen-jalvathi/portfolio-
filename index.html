@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohaideen Jalvathi A · Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .page {
+      display: none;
+      animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .page.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+  <nav class="sticky top-0 z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+        <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold tracking-wider shadow-sm shadow-indigo-600/20">
+          MJ
+        </div>
+        <span class="text-sm font-semibold tracking-tight text-slate-800 dark:text-slate-200 hidden sm:inline">Mohaideen Jalvathi</span>
+      </div>
+      
+      <div class="flex items-center gap-1 sm:gap-2">
+        <button data-nav="home" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200" onclick="showPage('home')">
+          <i class="fas fa-home mr-1.5 opacity-70"></i><span class="hidden sm:inline">Home</span>
+        </button>
+        <button data-nav="projects" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200" onclick="showPage('projects')">
+          <i class="fas fa-code mr-1.5 opacity-70"></i><span class="hidden sm:inline">Projects</span>
+        </button>
+        <button data-nav="resume" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200" onclick="showPage('resume')">
+          <i class="fas fa-file-alt mr-1.5 opacity-70"></i><span class="hidden sm:inline">Resume</span>
+        </button>
+        <button data-nav="contact" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200" onclick="showPage('contact')">
+          <i class="fas fa-envelope mr-1.5 opacity-70"></i><span class="hidden sm:inline">Contact</span>
+        </button>
+        
+        <div class="w-px h-5 bg-slate-200 dark:bg-slate-800 mx-1"></div>
+        
+        <button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+          <i class="fas fa-moon dark:hidden text-base"></i>
+          <i class="fas fa-sun hidden dark:inline text-base text-amber-400"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+
+    <div id="page-home" class="page active space-y-12">
+      
+      <header class="relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm transition-colors duration-300">
+        <div class="absolute -right-10 -top-10 w-40 h-40 bg-indigo-600/5 dark:bg-indigo-400/5 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+          <div class="space-y-4 max-w-2xl">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Mohaideen <span class="text-indigo-600 dark:text-indigo-400">Jalvathi</span> A
+            </h1>
+            <p class="text-lg font-medium text-slate-600 dark:text-slate-400">AWS Certified Cloud Systems & Data Solutions Engineer</p>
+            
+            <div class="flex flex-wrap gap-y-2 gap-x-4 text-sm text-slate-500 dark:text-slate-400 pt-1">
+              <a href="mailto:jalvathimohaideen@gmail.com" class="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                <i class="fas fa-envelope text-indigo-500 text-xs"></i> jalvathimohaideen@gmail.com
+              </a>
+              <a href="tel:+918124177836" class="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                <i class="fas fa-phone-alt text-indigo-500 text-xs"></i> +91 8124177836
+              </a>
+              <a href="#" class="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                <i class="fab fa-linkedin text-indigo-500 text-xs"></i> linkedin.com/in/mohaideen-jalvathi-a
+              </a>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-900/50">
+                <i class="fas fa-cloud text-[10px]"></i> AWS Certified
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-900/50">
+                <i class="fas fa-chart-line text-[10px]"></i> Data Science
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium bg-cyan-50 text-cyan-700 dark:bg-cyan-950/50 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-900/50">
+                <i class="fas fa-layer-group text-[10px]"></i> MERN Stack
+              </span>
+            </div>
+          </div>
+
+          <div class="flex md:flex-col gap-4 text-xl border-t md:border-t-0 md:border-l border-slate-200 dark:border-slate-800 pt-4 md:pt-0 md:pl-6 text-slate-400 dark:text-slate-600">
+            <i class="fab fa-aws hover:text-orange-500 transition-colors duration-200" title="AWS"></i>
+            <i class="fab fa-python hover:text-blue-500 transition-colors duration-200" title="Python"></i>
+            <i class="fab fa-react hover:text-cyan-400 transition-colors duration-200" title="React Code"></i>
+            <i class="fab fa-node-js hover:text-green-500 transition-colors duration-200" title="NodeJS"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-10">
+          
+          <section class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-3">
+            <h2 class="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fas fa-bullseye text-indigo-500 text-sm"></i> Career Summary
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+              Motivated and detail-oriented MCA graduate with strong analytical, problem-solving, and communication infrastructure skills. 
+              Extensively trained in AWS Cloud Management architecture, Data Science ecosystems, and Data Analytics engine designs. 
+              Seeking to architect modern web applications and deploy structured computing pipelines to generate organizational scaling solutions.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <div class="flex items-center justify-between">
+              <h2 class="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                <i class="fas fa-folder text-indigo-500 text-sm"></i> Highlighted Projects
+              </h2>
+              <button onclick="showPage('projects')" class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center gap-1">
+                Explore All <i class="fas fa-arrow-right text-[10px]"></i>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:border-indigo-500/50 dark:hover:border-indigo-400/50 transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-mono text-indigo-600 dark:text-indigo-400 tracking-wider font-semibold uppercase">Full-Stack Architecture</span>
+                    <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Enterprise Job Portal</h3>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-light line-clamp-3">
+                    Full‑stack job distribution platform supporting systemized role postings, query search configurations, tracker monitors, and instantaneous webhook job notifications.
+                  </p>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 dark:text-slate-500 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
+                  Node · React · MongoDB · Express
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:border-emerald-500/50 dark:hover:border-emerald-400/50 transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 tracking-wider font-semibold uppercase">IoT & Automation</span>
+                    <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Smart Home Automation</h3>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-light line-clamp-3">
+                    Micro-controller configuration deploying an IoT framework managing live domestic hardware grids via mobile APIs, saving actionable hardware operating metrics.
+                  </p>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 dark:text-slate-500 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
+                  Arduino · ESP8266 · Blynk Api · C++
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <h2 class="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fas fa-award text-indigo-500 text-sm"></i> Accreditations & Badges
+            </h2>
+            <div class="space-y-3.5">
+              <div class="flex gap-3">
+                <div class="w-7 h-7 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs flex-shrink-0 mt-0.5 border border-indigo-100/50 dark:border-indigo-900/50">
+                  <i class="fab fa-aws"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-800 dark:text-slate-200">AWS Certified Cloud Practitioner (CLF-C02)</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 font-light mt-0.5">Validated foundational mastery over operational AWS infrastructure components, billing tools, security guardrails, and key database networks.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <div class="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs flex-shrink-0 mt-0.5 border border-emerald-100/50 dark:border-emerald-900/50">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-800 dark:text-slate-200">Professional Data Science Certification</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 font-light mt-0.5">Comprehensive execution of predictive analytical architectures, statistical logic programming, data transformation frameworks, and supervised ML pipelines.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="space-y-8">
+          
+          <section class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <h2 class="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fas fa-graduation-cap text-indigo-500 text-sm"></i> Education Track
+            </h2>
+            <div class="space-y-4 font-light relative pl-4 border-l border-slate-200 dark:border-slate-800 ml-1">
+              <div class="relative">
+                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-600 border border-white dark:border-slate-900"></div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">MCA</h4>
+                <p class="text-xs text-indigo-600 dark:text-indigo-400 font-medium">Bharath Niketan Eng. College</p>
+                <p class="text-[11px] text-slate-400 dark:text-slate-500 font-mono">2022 — 2024</p>
+              </div>
+              <div class="relative">
+                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 border border-white dark:border-slate-900"></div>
+                <h4 class="text-sm font-semibold text-slate-800 dark:text-slate-300">B.Sc. Computer Science</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Theni College of Arts & Sci.</p>
+                <p class="text-[11px] text-slate-400 dark:text-slate-500 font-mono">2019 — 2022</p>
+              </div>
+              <div class="relative">
+                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 border border-white dark:border-slate-900"></div>
+                <h4 class="text-sm font-medium text-slate-700 dark:text-slate-400">High School Matrix (HSC/SSLC)</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">S.U.M. Higher Secondary School</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <h2 class="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fas fa-toolbox text-indigo-500 text-sm"></i> Technical Stack
+            </h2>
+            
+            <div class="space-y-3">
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold block mb-1.5">Languages & Core</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-xs bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 px-2.5 py-1 rounded-md font-medium">Python</span>
+                  <span class="text-xs bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 px-2.5 py-1 rounded-md font-medium">Linux Bash</span>
+                  <span class="text-xs bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 px-2.5 py-1 rounded-md font-medium">SQL Architecture</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold block mb-1.5">Frameworks & Deployment</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-xs bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300 px-2.5 py-1 rounded-md font-medium border border-indigo-100/30 dark:border-indigo-900/30">MERN Stack</span>
+                  <span class="text-xs bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300 px-2.5 py-1 rounded-md font-medium border border-indigo-100/30 dark:border-indigo-900/30">Serverless Architecture</span>
+                  <span class="text-xs bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300 px-2.5 py-1 rounded-md font-medium border border-indigo-100/30 dark:border-indigo-900/30">AWS CAF Framework</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold block mb-1.5">Analytics & Specialized</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-xs bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 px-2.5 py-1 rounded-md font-medium border border-emerald-100/30 dark:border-emerald-900/30">Data Science</span>
+                  <span class="text-xs bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 px-2.5 py-1 rounded-md font-medium border border-emerald-100/30 dark:border-emerald-900/30">Data Modeling</span>
+                  <span class="text-xs bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200 px-2.5 py-1 rounded-md font-medium">Cloud Networking</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="bg-indigo-600 text-white rounded-2xl p-5 text-center shadow-md shadow-indigo-600/10 space-y-1">
+            <p class="text-sm font-semibold inline-flex items-center gap-2"><i class="fas fa-paper-plane text-xs animate-pulse"></i> Open for Tech Roles</p>
+            <p class="text-xs text-indigo-100 font-light">Available for immediate developer onboardings.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="page-projects" class="page space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fas fa-code-branch text-indigo-500"></i> Engineered Projects Registry
+        </h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 font-light mt-1">A curated compilation of systems engineering, full-stack tools, and cloud deployments.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <div class="md:w-12 md:h-12 w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg flex-shrink-0 border border-indigo-100/50 dark:border-indigo-900/50">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="space-y-3 flex-grow">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Enterprise Ecosystem Job Portal</h3>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Web Application</span>
+              </div>
+              <p class="text-xs text-indigo-600 dark:text-indigo-400 font-mono mt-0.5">Node.js · Express · React · MongoDB Atlas</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+              Designed a reliable MERN framework managing dynamic profiles. Programmed custom pipeline triggers running real-time application updates, specific candidate status queries, customizable alert mechanisms, and safe bookmarking structures. Re-engineered data validation loops, increasing structural recording accuracies over the system database layer.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">REST API</span>
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">CRUD Operations</span>
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">State Engine</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <div class="md:w-12 md:h-12 w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg flex-shrink-0 border border-emerald-100/50 dark:border-emerald-900/50">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <div class="space-y-3 flex-grow">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Smart Hardware IoT Automation Grid</h3>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Embedded IoT</span>
+              </div>
+              <p class="text-xs text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">C++ Core · ESP8266 Wi-Fi Module · Arduino Engine · Blynk API</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+              Assembled a micro-controller system enabling centralized operations over household appliances remotely. Structured real-time monitoring streams with immediate event configurations by processing sensor telemetry inputs through microprocessors, boosting local power-management efficiency indexes.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">Hardware Prototyping</span>
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">Sensor Networks</span>
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">Telemetry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <div class="md:w-12 md:h-12 w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg flex-shrink-0 border border-amber-100/50 dark:border-amber-900/50">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <div class="space-y-3 flex-grow">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Secure Cloud Storage Storage System</h3>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">AWS Infrastructure</span>
+              </div>
+              <p class="text-xs text-amber-600 dark:text-amber-400 font-mono mt-0.5">AWS (S3 · EC2 · IAM) · Python · HTML Engine Client</p>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+              Architected a highly secure cloud bucket platform engineered for fast file allocations and shares. Enforced precise file encryption protocols alongside custom IAM group permissions to safely divide organizational roles. Implemented auto-scaling setups using standard AWS EC2 instances alongside Application Load Balancers.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">High Availability</span>
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">IAM Governance</span>
+              <span class="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded">Object Storage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-resume" class="page space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fas fa-file-invoice text-indigo-500"></i> Curriculum Vitae
+          </h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Production verification profile</p>
+        </div>
+        <button onclick="window.print()" class="text-xs font-medium bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 hover:opacity-90 px-4 py-2 rounded-lg flex items-center gap-2 shadow transition">
+          <i class="fas fa-print"></i> Generate Document PDF
+        </button>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8 max-w-4xl mx-auto">
+        <div class="text-center sm:text-left space-y-2 pb-6 border-b border-slate-100 dark:border-slate-800">
+          <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Mohaideen Jalvathi A</h1>
+          <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400 tracking-wide uppercase font-mono">Systems Engineer & Cloud Analyst</p>
+          <div class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400 font-light pt-1">
+            <span><i class="fas fa-envelope mr-1.5 text-slate-400"></i>jalvathimohaideen@gmail.com</span>
+            <span><i class="fas fa-phone mr-1.5 text-slate-400"></i>+91 8124177836</span>
+            <span><i class="fab fa-linkedin mr-1.5 text-slate-400"></i>linkedin.com/in/mohaideen-jalvathi-a</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs font-bold font-mono tracking-widest text-slate-400 uppercase">01 / Career Ambition</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+            Dedicated and system-focused Master of Computer Applications (MCA) post-graduate intent on deploying optimized, production-level code architectures. Proven record establishing stable AWS frameworks alongside structured analytical applications. Committed to expanding modern enterprise tech operations through systematic code governance.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-xs font-bold font-mono tracking-widest text-slate-400 uppercase">02 / Academic Qualifications</h3>
+          <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-1">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Master of Computer Application (MCA)</h4>
+                <p class="text-xs text-indigo-600 dark:text-indigo-400">Bharath Niketan Engineering College</p>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-500 font-medium">2022 — 2025</span>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-1">
+              <div>
+                <h4 class="text-sm font-semibold text-slate-800 dark:text-slate-300">Bachelor of Computer Science (B.Sc.)</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Theni College of Arts and Science</p>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-500">2019 — 2022</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-1">
+              <div>
+                <h4 class="text-sm font-medium text-slate-700 dark:text-slate-400">HSC & SSLC Matrices</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">S.U.M. Higher Secondary School</p>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-500">2016 — 2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-xs font-bold font-mono tracking-widest text-slate-400 uppercase">03 / Tech Capabilities Matrix</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-light">
+            <div class="border border-slate-100 dark:border-slate-800/60 rounded-xl p-3.5 space-y-1">
+              <span class="font-semibold text-slate-800 dark:text-slate-200 block">Core Scripting Engine</span>
+              <p class="text-slate-500 dark:text-slate-400">Python OOP setups, Advanced Linux Bash terminal commands, Database operations via SQL structures.</p>
+            </div>
+            <div class="border border-slate-100 dark:border-slate-800/60 rounded-xl p-3.5 space-y-1">
+              <span class="font-semibold text-slate-800 dark:text-slate-200 block">Cloud Solutions Architecture</span>
+              <p class="text-slate-500 dark:text-slate-400">AWS Cloud Provisioning (S3, EC2, IAM policies), serverless systems computing deployment architectures, security protocols.</p>
+            </div>
+            <div class="border border-slate-100 dark:border-slate-800/60 rounded-xl p-3.5 space-y-1">
+              <span class="font-semibold text-slate-800 dark:text-slate-200 block">Web System Architecture</span>
+              <p class="text-slate-500 dark:text-slate-400">MERN Framework integrations (MongoDB interfaces, Express routers, client-side React processing, runtime Node servers).</p>
+            </div>
+            <div class="border border-slate-100 dark:border-slate-800/60 rounded-xl p-3.5 space-y-1">
+              <span class="font-semibold text-slate-800 dark:text-slate-200 block">Analytical Engines</span>
+              <p class="text-slate-500 dark:text-slate-400">Statistical data visualization pipelines, Machine Learning algorithms, predictive analytics execution models.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-xs font-bold font-mono tracking-widest text-slate-400 uppercase">04 / Official Certifications</h3>
+          <ul class="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-light">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-indigo-500 text-[10px] mt-1"></i>
+              <span><strong class="font-medium text-slate-900 dark:text-white">AWS Certified Cloud Practitioner</strong> — Official industry certification verifying operational cloud infrastructure fluency.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-indigo-500 text-[10px] mt-1"></i>
+              <span><strong class="font-medium text-slate-900 dark:text-white">Data Science Professional Accreditation</strong> — Certified validation encompassing data wrangling, regression modelling, and insight visualization templates.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-contact" class="page space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fas fa-envelope text-indigo-500"></i> Initiate Communication
+        </h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 font-light mt-1">Let's discuss technical roles, engineering initiatives, or cloud deployments.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="space-y-3 lg:col-span-1">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 flex items-center gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-sm">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-[11px] font-mono text-slate-400 uppercase font-bold tracking-wider">Direct Mail</p>
+              <p class="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-300 truncate">jalvathimohaideen@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 flex items-center gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-sm">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <p class="text-[11px] font-mono text-slate-400 uppercase font-bold tracking-wider">Cell Number</p>
+              <p class="text-sm font-medium text-slate-800 dark:text-slate-300">+91 8124177836</p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 flex items-center gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0 text-sm">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-[11px] font-mono text-slate-400 uppercase font-bold tracking-wider">Professional Link</p>
+              <a href="#" class="text-xs text-indigo-600 dark:text-indigo-400 font-medium hover:underline truncate block">linkedin.com/in/mohaideen-jalvathi-a</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <form onsubmit="handleSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Full Name</label>
+                  <input type="text" required class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 transition" placeholder="Alex Morgan" />
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Email Address</label>
+                  <input type="email" required class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 transition" placeholder="alex@company.com" />
+                </div>
+              </div>
+              <div class="space-y-1">
+                <label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Inquiry Subject</label>
+                <input type="text" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 transition" placeholder="System Engineer Opportunity" />
+              </div>
+              <div class="space-y-1">
+                <label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Message Content</label>
+                <textarea rows="4" required class="w-full px-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 transition resize-none" placeholder="Draft message requirements..."></textarea>
+              </div>
+              
+              <button type="submit" class="w-full text-xs font-bold uppercase tracking-wider bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg shadow-md shadow-indigo-600/10 transition duration-200 flex items-center justify-center gap-2">
+                <i class="fas fa-paper-plane text-[10px]"></i> Dispatch Core Message
+              </button>
+            </form>
+
+            <div id="form-success" class="hidden mt-4 p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/50 dark:border-emerald-900/50 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-light">
+              <i class="fas fa-check-circle mr-1.5 text-emerald-500"></i> Transmission successful. Your message log has been submitted.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="mt-auto border-t border-slate-200 dark:border-slate-900 py-6 text-center text-xs text-slate-400 dark:text-slate-600 font-light">
+    <div class="max-w-5xl mx-auto px-4">
+      <p>© 2026 Mohaideen Jalvathi A. Built using production-grade Tailwind architecture CSS modules.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Systemized Single Page Controller 
+    function showPage(pageId) {
+      // Deactivate all layouts
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      
+      // Active targeted module
+      const targetPage = document.getElementById('page-' + pageId);
+      if(targetPage) targetPage.classList.add('active');
+
+      // Refresh Nav button highlights using custom data structures
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        const attribute = btn.getAttribute('data-nav');
+        if (attribute === pageId) {
+          btn.className = "nav-link px-3 py-2 rounded-lg text-sm font-semibold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 transition-all duration-200";
+        } else {
+          btn.className = "nav-link px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200";
+        }
+      });
+
+      // Smooth window focus correction
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Dark Theme Engine
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('portfolio-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('portfolio-theme', 'dark');
+      }
+    }
+
+    // Read Cache Configurations on Boot
+    if (localStorage.getItem('portfolio-theme') === 'dark' || (!('portfolio-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    // Initialize Default View
+    showPage('home');
+
+    // Contact Submission Logger Mockup
+    function handleSubmit(event) {
+      event.preventDefault();
+      const notification = document.getElementById('form-success');
+      notification.classList.remove('hidden');
+      setTimeout(() => {
+        notification.classList.add('hidden');
+        event.target.reset();
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
